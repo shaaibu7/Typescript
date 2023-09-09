@@ -10,3 +10,19 @@ const user: User = {
     id: 12,
 }
 
+// interface declaration with classes
+
+class UserAccount {
+    name: string;
+    id: number;
+
+    constructor(name: string, id: number) {
+        this.name = name;
+        this.id = id
+    }
+}
+
+const userone: User = new UserAccount('Murphy', 1)
+
+console.log(userone.name)
+
