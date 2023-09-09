@@ -38,3 +38,20 @@ let IsPositive: Mybool = true;
 type WindowStates = 'open' | 'closed' | 'minimal';
 type LockStates = 'locked' | 'unlocked';
 type PositiveOddNumberUnderTen = 1 | 3 |5 | 7 | 9;
+
+
+// Unions provide a way to handle different types too. 
+// For example, you may have a function that takes an 
+// array or a string:
+
+function getLength(obj: string | string[]) {
+    return obj.length;
+}
+
+console.log(getLength(['sule', 'krap']))
+
+// Generics
+
+type StringArray = Array<string>;
+type NumberArray = Array<number>;
+type ObjectWithNameArray = Array<{name: string}>;

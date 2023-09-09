@@ -9,6 +9,11 @@ class UserAccount {
         this.id = id;
     }
 }
-const userone = new UserAccount('Murphy', 1);
+const userone = new UserAccount("Murphy", 1);
 console.log(userone.name);
+let IsPositive = true;
+function getLength(obj) {
+    return obj.length;
+}
+console.log(getLength(['sule', 'krap']));
 //# sourceMappingURL=index.js.map
