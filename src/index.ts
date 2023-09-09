@@ -24,8 +24,6 @@ class UserAccount {
 
 const userone: User = new UserAccount("Murphy", 1);
 
-console.log(userone.name);
-
 // Unions
 type Mybool = true | false;
 
@@ -48,10 +46,50 @@ function getLength(obj: string | string[]) {
     return obj.length;
 }
 
-console.log(getLength(['sule', 'krap']))
-
 // Generics
 
 type StringArray = Array<string>;
 type NumberArray = Array<number>;
 type ObjectWithNameArray = Array<{name: string}>;
+
+// You can declare your own types that use generics:
+
+interface Backpack<Type> {
+    add: (obj: Type) => void;
+    get: () => Type;
+}
+
+// declare const backpack: Backpack<string>;
+
+// const object = backpack.get();
+
+// backpack.add('sule')
+
+// structural type system
+
+interface Point {
+    x: number;
+    y: number;
+}
+
+function logPoint(p: Point) {
+    console.log(`${p.x}, ${p.y}`);
+}
+
+const point = { x: 12, y: 26, };
+logPoint(point);
+
+// Structural patterns in classes
+
+class Virtual {
+    x: number;
+    y: number;
+
+    constructor(x: number, y:number) {
+        this.x = x;
+        this.y = y
+    }
+}
+
+const newPoint = new Virtual(13, 33)
+console.log(newPoint);
